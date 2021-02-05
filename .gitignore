@@ -1,4 +1,4 @@
-*.code-workspace
+#*.code-workspace
 
 # Environment Variables
 .env
@@ -6,8 +6,10 @@
 # mounted volume
 sites
 
-development
-!development/README.md
+#development
+#!development/README.md
+development/.vscode
+frappe-bench
 deploy_key
 deploy_key.pub
 
