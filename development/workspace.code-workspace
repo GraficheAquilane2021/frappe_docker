@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../development/frappe-bench/apps/erpnext"
+		},
+		{
+			"path": "../development/frappe-bench/apps/frappe"
+		}
+	],
+	"settings": {}
+}
