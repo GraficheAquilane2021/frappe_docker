@@ -1,4 +1,4 @@
-FROM graficheaquilane/node:slim
+FROM node:buster-slim
 
 # Add frappe user
 RUN useradd -ms /bin/bash frappe
@@ -9,7 +9,7 @@ RUN mkdir -p /home/frappe/frappe-bench/sites /home/frappe/frappe-bench/apps/frap
 
 # Download socketio and purge curl package
 COPY build/frappe-socketio/package.json /home/frappe/frappe-bench/apps/frappe
-ARG GIT_BRANCH=develop
+ARG GIT_BRANCH=version-12
 RUN apt-get update && apt-get install -y curl \
     && cd /home/frappe/frappe-bench/apps/frappe \
     && curl "https://raw.githubusercontent.com/GraficheAquilane2021/frappe/$GIT_BRANCH/socketio.js" \
