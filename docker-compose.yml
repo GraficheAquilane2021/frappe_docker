@@ -43,6 +43,11 @@ services:
       - "${ENTRYPOINT_LABEL}"
       - "${CERT_RESOLVER_LABEL}"
       - "traefik.http.services.erpnext-nginx.loadbalancer.server.port=80"
+      #decomment if you are on web (it allow work http://<machine_ip>/#login)
+      #- "traefik.http.routers.erpnext-nginx.rule=HostRegexp(`{catchall:.*}`)" 
+      #- "traefik.http.middlewares.erpnext-nginx.headers.customrequestheaders.Host=erpnext-nginx"
+      #- "traefik.http.routers.erpnext-nginx.middlewares=erpnext-nginx"
+      # end decomment if you are on web (it allow work http://<machine_ip>/#login)
     volumes:
       - sites-vol:/var/www/html/sites:rw
       - assets-vol:/assets:rw
